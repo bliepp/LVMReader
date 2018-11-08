@@ -8,7 +8,7 @@ chmod 755 lvmReader.py
 ```
 And then use it as following:
 ```bash
-./lvmReader File.lvm [export.file]
+./lvmReader.py file.lvm [export.file]
 ```
 
 # Using as a python3 module
@@ -20,9 +20,9 @@ from lvmReader import *
 my_lvm = LVMReader(path="Path/to/file.lvm")
 
 # Auto-cleaned list of columns
-my_data = my_lvm.data
+my_columns = my_lvm.columns
 # Auto-cleaned list of rows
-my_transposed_data = my_lvm.transposed
+my_rows = my_lvm.rows
 ```
 ## Exporting to text file
 ```python

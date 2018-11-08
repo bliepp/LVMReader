@@ -62,7 +62,7 @@ class LVMReader():
                 [ float(x) for x in row ] for row in self.__data
             ]
         
-        self.__data = self.transposed
+        self.__data = LVMReader.transpose(self.__data)
 
     def transpose(array):
         # Transpose
@@ -81,11 +81,11 @@ class LVMReader():
                 out.write("\n")
     
     @property
-    def data(self):
+    def columns(self):
         return self.__data[:]
 
     @property
-    def transposed(self):
+    def rows(self):
         return LVMReader.transpose(self.__data)
 
 if __name__ == "__main__":
@@ -101,5 +101,5 @@ if __name__ == "__main__":
             lvm.filename = sys.argv[2]
         
         # Export and show data
-        LVMReader.export(lvm.data, lvm.filename)
-        print(lvm.data)
+        LVMReader.export(lvm.columns, lvm.filename)
+        print(lvm.columns)
