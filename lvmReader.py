@@ -77,7 +77,7 @@ class LVMReader():
 
         with open(path, "w") as out:
             for i in array:
-                out.write(space.join(str(x) for x in i) + end)
+                out.write(space.join("{:E}".format(x) for x in i) + end)
                 out.write("\n")
     
     @property
