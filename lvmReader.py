@@ -52,9 +52,11 @@ class LVMReader():
 
         # Remove header
         ## Get last occurence of "End Header"
-        i = len(self.__data) - 1 - self.__data[::-1].index(
-                ["***End_of_Header***"]
-            ) + 2
+        if "***End_of_Header" in self.__data:
+            i = len(self.__data) - 1 - self.__data[::-1].index(
+                    ["***End_of_Header***"]
+                ) + 2
+        else: i = 0
         self.__data = self.__data[i:]
 
         # Convert to floats
