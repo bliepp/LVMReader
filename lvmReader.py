@@ -68,14 +68,17 @@ class LVMReader():
         # Transpose
         return list(map(list, zip(*array)))[:]
 
-    def export(array, path="", space="\t", end="", transposed=False):
+    def export(array, path="", space="\t", end="", header="", transposed=False):
         """
         Template for universal exporting.
         """
         # inverse logic!
         if not transposed: array = LVMReader.transpose(array)
+        # check for header
+        if header != "": header += "\n"
 
         with open(path, "w") as out:
+            out.write(header)
             for i in array:
                 out.write(space.join("{:E}".format(x) for x in i) + end)
                 out.write("\n")
