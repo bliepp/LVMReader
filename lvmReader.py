@@ -52,7 +52,7 @@ class LVMReader():
 
         # Remove header
         ## Get last occurence of "End Header"
-        if "***End_of_Header" in self.__data:
+        if "***End_of_Header***" in self.__data:
             i = len(self.__data) - 1 - self.__data[::-1].index(
                     ["***End_of_Header***"]
                 ) + 2
