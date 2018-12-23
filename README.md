@@ -27,9 +27,9 @@ my_rows = my_lvm.rows
 ## Exporting to text file
 ```python
 # Change filename and export, autoset to original-filename.dat
-my_lvm.filename = "export.dat"
+my_lvm.filename = "export.dat" # to change autgenerated filename
 # array must be a 2D-array
-LVMReader.export(array, path="", space="\t", end="", transposed=False)
+LVMReader.export(array, path="", space="\t", end="", header="", transposed=False)
 ```
 
 ## Transpose a 2D-array list
