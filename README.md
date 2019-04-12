@@ -1,5 +1,5 @@
-# LVMReader
-A python reader for LabView's export format (.lvm)
+# LabVIEW Reader
+A python reader for LabVIEW's export format (.lvm)
 
 # Using the program as standalone
 Make it executable
